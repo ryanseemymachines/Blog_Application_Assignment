@@ -1,0 +1,17 @@
+.blogContainer{
+    display: flex;
+    justify-content: center;
+}
+
+.blogPostCard{
+    width:50%;
+    border:1px solid black;
+    border-radius: 15px;
+    padding: 20px;
+    margin:20px 0;
+}
+
+.blogPostCard p{
+    font-size: 1.05em;
+    line-height: 1.4;
+}

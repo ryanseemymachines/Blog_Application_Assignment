@@ -1,0 +1,29 @@
+.headerContainer{
+     background-color: rgb(252, 240, 226);
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.headerContainer h1{
+    margin:0;
+    font-size: 40px;
+}
+
+.navGrp ul{
+    display: flex;
+    gap:30px;
+}
+
+.navGrp ul li{
+    list-style: none;
+    padding: 12px 15px;
+    border-radius:12px;
+    transition: all 0.4s ease;
+}
+
+.navGrp ul li:hover{
+    background-color: rgb(105, 40, 151);
+    cursor:pointer;
+    color:white;
+}
