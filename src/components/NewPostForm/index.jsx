@@ -25,41 +25,35 @@ function NewPostForm() {
     setNewPost({ title: "", author: "", content: "" });
   };
 
-  const addNewPost =()=>{
-
-  }
+  const addNewPost = () => {};
 
   return (
     <form onSubmit={handleSubmit}>
       <h2>Add new Blog Post</h2>
-        <Input
-          type="text"
-          name="title"
-          placeholder="Post Title"
-          value={newPost.title}
-          onChange={handleChange}
-        />
+      <Input
+        type="text"
+        name="title"
+        placeholder="Post Title"
+        value={newPost.title}
+        onChange={handleChange}
+      />
 
-        <Input
-          type="text"
-          name="author"
-          placeholder="Author"
-          value={newPost.author}
-          onChange={handleChange}
-        />
+      <Input
+        type="text"
+        name="author"
+        placeholder="Author"
+        value={newPost.author}
+        onChange={handleChange}
+      />
 
-        <TextArea
-          name="content"
-          placeholder="Enter the content"
-          value={newPost.content}
-          onChange={handleChange}
-          />
+      <TextArea
+        name="content"
+        placeholder="Enter the content"
+        value={newPost.content}
+        onChange={handleChange}
+      />
 
-          <AddPostButton
-          type="submit"
-          title="Add Task"
-          onSubmit={addNewPost}
-          />
+      <AddPostButton type="submit" title="Add Task" onSubmit={addNewPost} />
     </form>
   );
 }
