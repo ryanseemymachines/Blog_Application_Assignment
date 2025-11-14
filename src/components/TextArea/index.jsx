@@ -1,3 +1,5 @@
+import styles from './index.module.css';
+
 function TextArea({ name, placeholder, value, onChange }) {
   return (
     <div>
@@ -6,6 +8,7 @@ function TextArea({ name, placeholder, value, onChange }) {
         placeholder={placeholder}
         value={value}
         onChange={onChange}
+        className={styles.textAreaInput}
       />
     </div>
   );

@@ -3,7 +3,10 @@
     display: flex;
     align-items: center;
     justify-content: space-around;
-    padding: 10px;
+    padding: 20px;
+    position: fixed;
+    bottom: 0;
+    width:100%;
 }
 
 .footerGrp p{
@@ -13,5 +16,9 @@
 .socialsGrp ul{
     display: flex;
     list-style: none;
-    gap:30px;
+    gap:40px;
+}
+
+.socialsGrp ul li{
+    cursor: pointer;
 }

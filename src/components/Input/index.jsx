@@ -1,3 +1,5 @@
+import styles from './index.module.css'
+
 function Input({ type, name, placeholder, value, onChange }) {
   return (
     <div>
@@ -7,7 +9,8 @@ function Input({ type, name, placeholder, value, onChange }) {
         placeholder={placeholder}
         value={value}
         onChange={onChange}
-      />
+        className={styles.inputField}
+        />
     </div>
   );
 }

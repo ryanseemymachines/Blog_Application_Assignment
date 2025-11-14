@@ -1,9 +1,14 @@
+import { useState } from "react";
 import BlogPost from "../BlogPost";
-import Header from "../Header";
+import BlogHeader from "../BlogHeader";
+import CreateBlogButton from "../CreateBlogButton";
+import NewPostForm from "../NewPostForm";
+import Modal from "../Modal";
 
 function PostList() {
-  const posts = [
+  const [posts, setPosts] = useState([
     {
+      id: 1,
       title: "React Basics",
       author: "Jane Doe",
       date: "18-07-2024",
@@ -32,6 +37,7 @@ function PostList() {
       ),
     },
     {
+      id: 2,
       title: "State and Props",
       author: "John Smith",
       date: "19-07-2024",
@@ -50,6 +56,7 @@ function PostList() {
       ),
     },
     {
+      id: 3,
       title: "Lifecycle Methods",
       author: "Emily Johnson",
       date: "20-07-2024",
@@ -67,26 +74,46 @@ function PostList() {
         </>
       ),
     },
-  ];
+  ]);
+
+  const [selectedId,setSelectedId] = useState(posts[0].id);
+
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
+  const displayPost=posts.find(post => post.id===selectedId);
+
+  const handleAddPost = (newPost) => {
+    setPosts((prev) => [newPost, ...prev]);
+  };
+
   return (
     <div>
-      <section>
-        {posts.map((post, index) => (
-            <Header title={post.title} />
-        ))}
-        {posts.map((post, index) => (
-            <BlogPost
-              key={index}
-              title={post.title}
-              author={post.author}
-              date={post.date}
-              content={post.content}
-            />
-        ))}
+      <section >
+        <BlogHeader posts={posts} selectedPost={setSelectedId}/>
+        <CreateBlogButton
+          type="button"
+          title="+ Create New Blog"
+          onClick={() => setIsModalOpen(true)}
+        />
+        <Modal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)}>
+          <NewPostForm
+            onAddPost={handleAddPost}
+            onClose={() => setIsModalOpen(false)}
+          />
+        </Modal>
+        
+        {displayPost &&
+          <BlogPost
+            key={displayPost.id}
+            title={displayPost.title}
+            author={displayPost.author}
+            date={displayPost.date}
+            content={displayPost.content}
+          />}
+
       </section>
     </div>
   );
 }
 
 export default PostList;
-

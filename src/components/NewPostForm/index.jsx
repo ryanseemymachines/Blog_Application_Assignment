@@ -1,9 +1,11 @@
+import styles from "./index.module.css";
 import { useState } from "react";
 import Input from "../Input";
 import TextArea from "../TextArea";
 import AddPostButton from "../AddPostButton";
+import CloseButton from "../CloseButton";
 
-function NewPostForm() {
+function NewPostForm({ onAddPost, onClose }) {
   const [newPost, setNewPost] = useState({
     title: "",
     author: "",
@@ -20,40 +22,55 @@ function NewPostForm() {
     if (!newPost.title || !newPost.author || !newPost.content) {
       alert("Please fill out all fields.");
       return;
+    } else {
+      onAddPost({
+        id: Date.now(),
+        title: newPost.title,
+        author: newPost.author,
+        date: new Date().toLocaleDateString(),
+        content: newPost.content,
+      });
     }
-    addPost(newPost);
     setNewPost({ title: "", author: "", content: "" });
+    onClose();
   };
 
-  const addNewPost = () => {};
-
   return (
-    <form onSubmit={handleSubmit}>
-      <h2>Add new Blog Post</h2>
-      <Input
-        type="text"
-        name="title"
-        placeholder="Post Title"
-        value={newPost.title}
-        onChange={handleChange}
-      />
+    <form className={styles.formContainer} onSubmit={handleSubmit}>
+      <div className={styles.formGrp}>
+        <div className={styles.titleGrp}>
+          <h2>Add new Blog Post</h2>
+          <CloseButton type="button" onClick={onClose} />
+        </div>
 
-      <Input
-        type="text"
-        name="author"
-        placeholder="Author"
-        value={newPost.author}
-        onChange={handleChange}
-      />
+        <Input
+          type="text"
+          name="title"
+          placeholder="Post Title"
+          value={newPost.title}
+          onChange={handleChange}
+        />
 
-      <TextArea
-        name="content"
-        placeholder="Enter the content"
-        value={newPost.content}
-        onChange={handleChange}
-      />
+        <Input
+          type="text"
+          name="author"
+          placeholder="Author"
+          value={newPost.author}
+          onChange={handleChange}
+        />
 
-      <AddPostButton type="submit" title="Add Task" onSubmit={addNewPost} />
+        <TextArea
+          name="content"
+          placeholder="Enter the content"
+          value={newPost.content}
+          onChange={handleChange}
+        />
+
+        <AddPostButton
+          type="submit"
+          title="Publish Post"
+        />
+      </div>
     </form>
   );
 }

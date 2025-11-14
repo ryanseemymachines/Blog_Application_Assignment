@@ -1,9 +1,8 @@
-import React from 'react';
 import styles from './index.module.css';
 
 function HomeFooter() {
   return (
-    <div className={styles.footerGrp}>
+    <footer className={styles.footerGrp}>
         <section className={styles.copyrightGrp}>
             <b>© 2025 BlogIt.</b>
             <p>All rights reserved.</p>
@@ -16,7 +15,8 @@ function HomeFooter() {
                 <li><a><i class="fa-brands fa-linkedin"></i>LinkedIn</a></li>
             </ul>
         </section>
-    </div>
+    </footer>
+    
   )
 }
 

@@ -1,7 +1,9 @@
-function AddPostButton({ type, title, onSubmit }) {
+import styles from './index.module.css';
+
+function AddPostButton({ type, title }) {
   return (
     <div>
-      <button type={type} onSubmit={onSubmit}>
+      <button className={styles.addBtn} type={type}>
         {title}
       </button>
     </div>
