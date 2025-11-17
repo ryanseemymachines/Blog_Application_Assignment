@@ -21,6 +21,9 @@
 }
 
 .subtitle {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.5;
   font-size: 1.2em;
   color: rgb(100, 100, 100);
   text-align: center;
