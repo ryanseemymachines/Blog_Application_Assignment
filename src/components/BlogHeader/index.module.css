@@ -1,36 +1,65 @@
-.headerContainer{
-    padding: 20px;
-    background-color: rgb(225, 221, 214);
-    overflow-x: auto;
+.blogTitleHeader {
+  padding: 30px;
+  background-color: rgb(255, 242, 221);
+  overflow-x: auto;
+  overflow-y: hidden;
 }
 
-.headerList{
-    display: flex;
-    gap:15px;
+.blogTitleHeader::-webkit-scrollbar {
+  height: 8px;
 }
 
-.postCard{
-    min-width:100px;
-    font-size: 1.1em;
-    padding:10px 50px;
-    border:1px solid black;
-    border-radius: 16px;
-    cursor: pointer;
-    transition: all 0.2s ease;
+.blogTitleHeader::-webkit-scrollbar-track {
+  background: rgba(95, 95, 95, 0.639);
 }
 
-.postCard:hover{
-    transform: scale(1.02);
+.blogTitleHeader::-webkit-scrollbar-thumb {
+  background: rgb(42, 42, 42);
+  border-radius: 10px;
 }
 
-.postCard h3{
-    text-decoration:underline
+.blogTitleHeader::-webkit-scrollbar-thumb:hover {
+  background: rgb(86, 86, 86);
 }
 
-.postCard h5{
-    font-weight: 600;
+.headerList {
+  display: flex;
+  gap: 15px;
+  width: max-content;
 }
 
-.postCard span{
-    font-weight: 300;
+.postCard {
+  min-width: 200px;
+  font-size: 1.1em;
+  line-height: 2;
+  padding: 10px 50px;
+  border: 2px solid rgb(135, 135, 135);
+  border-radius: 16px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  flex-shrink: 0;
+}
+
+.postCard:hover {
+  background-color: white;
+  border: 2px solid rgb(0, 0, 0);
+  transform: scale(1.02);
+}
+
+.postCard h3 {
+  text-decoration: underline;
+}
+
+.postCard h5 {
+  font-weight: 600;
+}
+
+.postCard span {
+  margin-left: 10px;
+  font-weight: 300;
+}
+
+.activeCard {
+  background: #ffffff;
+  font-weight: bold;
 }

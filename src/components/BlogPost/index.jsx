@@ -16,6 +16,7 @@ class BlogPost extends Component {
 
   render() {
     const { title, author, date, content } = this.props;
+    const paragraphs = content.split("\n").filter((p) => p.trim());
     return (
       <div className={styles.blogContainer}>
         <article className={styles.blogPostCard}>
@@ -23,7 +24,11 @@ class BlogPost extends Component {
           <p>
             <strong>By:</strong> <big>{author}</big> | <i>{date}</i>
           </p>
-          <p>{content}</p>
+          {paragraphs.map((para, idx) => (
+            <p key={idx} className={styles.para_content}>
+              {para}
+            </p>
+          ))}
         </article>
       </div>
     );

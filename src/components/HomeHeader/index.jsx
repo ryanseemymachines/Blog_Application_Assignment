@@ -1,22 +1,27 @@
+import { NavLink } from "react-router-dom";
 import styles from "./index.module.css";
 
 function HomeHeader() {
+  const navLinkStyles = ({ isActive }) =>
+    isActive ? `${styles.navLink} ${styles.active}` : styles.navLink;
+
   return (
     <header className={styles.headerContainer}>
+      <NavLink to="/" className={styles.logoLink}>
         <h1 className={styles.logo}>BlogIt</h1>
-        <nav className={styles.navGrp}>
-          <ul>
-            <li>
-              <a>Home</a>
-            </li>
-            <li>
-              <a>About</a>
-            </li>
-            <li>
-              <a>Contact Us</a>
-            </li>
-          </ul>
-        </nav>
+      </NavLink>
+
+      <nav className={styles.navGrp}>
+        <NavLink to="/" className={navLinkStyles}>
+          Home
+        </NavLink>
+        <NavLink to="/about" className={navLinkStyles}>
+          About
+        </NavLink>
+        <NavLink to="/contact" className={navLinkStyles}>
+          Contact Us
+        </NavLink>
+      </nav>
     </header>
   );
 }

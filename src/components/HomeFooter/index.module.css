@@ -1,24 +1,32 @@
-.footerGrp{
-    background-color: rgb(251, 234, 214);
-    display: flex;
-    align-items: center;
-    justify-content: space-around;
-    padding: 20px;
-    position: fixed;
-    bottom: 0;
-    width:100%;
+.footerGrp {
+  background-color: rgb(251, 234, 214);
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  padding: 20px;
+  width: 100%;
 }
 
-.footerGrp p{
-    margin: 10px 0 0;
+.footerGrp p {
+  margin: 10px 0 0;
 }
 
-.socialsGrp ul{
-    display: flex;
-    list-style: none;
-    gap:40px;
+.socialsGrp ul {
+  display: flex;
+  list-style: none;
+  gap: 40px;
 }
 
-.socialsGrp ul li{
-    cursor: pointer;
+.socialsGrp ul li {
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.socialsGrp ul li:hover {
+  text-decoration: underline;
+}
+
+.socialsGrp ul li a {
+  text-decoration: none;
+  color: black;
 }

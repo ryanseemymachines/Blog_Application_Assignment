@@ -1,14 +1,14 @@
-.closeBtn{
-    padding: 10px;
-    border:1px solid black;
-    background-color: white;
-    color:black;
-    border-radius: 50%;
-    font-size: 1.3em;
-    transition: all 0.2s ease;
+.closeBtn {
+  padding: 10px;
+  border: 1px solid black;
+  background-color: white;
+  color: black;
+  border-radius: 50%;
+  font-size: 1.3em;
+  transition: all 0.2s ease;
 }
-.closeBtn:hover{
-    box-shadow: 0 0 20px grey;
-    background-color:black;
-    color:white;
+.closeBtn:hover {
+  box-shadow: 0 0 20px grey;
+  background-color: black;
+  color: white;
 }

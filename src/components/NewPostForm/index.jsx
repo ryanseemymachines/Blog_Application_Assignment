@@ -1,9 +1,9 @@
-import styles from "./index.module.css";
 import { useState } from "react";
 import Input from "../Input";
 import TextArea from "../TextArea";
-import AddPostButton from "../AddPostButton";
+import AddPostButton from "../AddButton";
 import CloseButton from "../CloseButton";
+import styles from "./index.module.css";
 
 function NewPostForm({ onAddPost, onClose }) {
   const [newPost, setNewPost] = useState({
@@ -22,15 +22,15 @@ function NewPostForm({ onAddPost, onClose }) {
     if (!newPost.title || !newPost.author || !newPost.content) {
       alert("Please fill out all fields.");
       return;
-    } else {
-      onAddPost({
-        id: Date.now(),
-        title: newPost.title,
-        author: newPost.author,
-        date: new Date().toLocaleDateString(),
-        content: newPost.content,
-      });
     }
+
+    onAddPost({
+      id: Date.now(),
+      title: newPost.title,
+      author: newPost.author,
+      date: new Date().toLocaleDateString(),
+      content: newPost.content,
+    });
     setNewPost({ title: "", author: "", content: "" });
     onClose();
   };
@@ -66,10 +66,7 @@ function NewPostForm({ onAddPost, onClose }) {
           onChange={handleChange}
         />
 
-        <AddPostButton
-          type="submit"
-          title="Publish Post"
-        />
+        <AddPostButton type="submit" title="Publish Post" />
       </div>
     </form>
   );

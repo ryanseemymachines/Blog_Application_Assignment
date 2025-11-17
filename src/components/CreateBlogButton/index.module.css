@@ -1,15 +1,15 @@
-.createBtn{
-    margin:15px 0 0 10px;
-    border:none;
-    border-radius: 16px;
-    font-size: 1.2em;
-    padding:12px 20px;
-    background-color: rgb(255, 236, 213);
-    transition: all 0.2s ease;
+.createBtn {
+  margin: 15px 0 0 10px;
+  border: none;
+  border-radius: 16px;
+  font-size: 1.2em;
+  padding: 12px 20px;
+  background-color: rgb(255, 236, 213);
+  transition: all 0.2s ease;
 }
-.createBtn:hover{
-    transform: scale(1.03);
-    background-color: black;
-    color: rgb(255, 216, 169);
-    cursor: pointer;
+.createBtn:hover {
+  transform: scale(1.03);
+  background-color: black;
+  color: rgb(255, 216, 169);
+  cursor: pointer;
 }
