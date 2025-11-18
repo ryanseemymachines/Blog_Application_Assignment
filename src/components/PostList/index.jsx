@@ -5,7 +5,7 @@ import CreateBlogButton from "../CreateBlogButton";
 import NewPostForm from "../NewPostForm";
 import Modal from "../Modal";
 
-function PostList() {
+const PostList = () => {
   const [posts, setPosts] = useState([
     {
       id: 1,
@@ -45,36 +45,34 @@ function PostList() {
   };
 
   return (
-    <div>
-      <section>
-        <BlogHeader
-          posts={posts}
-          selectedId={selectedId}
-          selectedPost={setSelectedId}
+    <section>
+      <BlogHeader
+        posts={posts}
+        selectedId={selectedId}
+        selectedPost={setSelectedId}
+      />
+      <CreateBlogButton
+        type="button"
+        title="+ Create New Blog"
+        onClick={() => setIsModalOpen(true)}
+      />
+      <Modal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)}>
+        <NewPostForm
+          onAddPost={handleAddPost}
+          onClose={() => setIsModalOpen(false)}
         />
-        <CreateBlogButton
-          type="button"
-          title="+ Create New Blog"
-          onClick={() => setIsModalOpen(true)}
-        />
-        <Modal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)}>
-          <NewPostForm
-            onAddPost={handleAddPost}
-            onClose={() => setIsModalOpen(false)}
-          />
-        </Modal>
+      </Modal>
 
-        {displayPost && (
-          <BlogPost
-            title={displayPost.title}
-            author={displayPost.author}
-            date={displayPost.date}
-            content={displayPost.content}
-          />
-        )}
-      </section>
-    </div>
+      {displayPost && (
+        <BlogPost
+          title={displayPost.title}
+          author={displayPost.author}
+          date={displayPost.date}
+          content={displayPost.content}
+        />
+      )}
+    </section>
   );
-}
+};
 
 export default PostList;

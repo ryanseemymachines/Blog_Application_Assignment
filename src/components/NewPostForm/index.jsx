@@ -5,7 +5,7 @@ import AddPostButton from "../AddButton";
 import CloseButton from "../CloseButton";
 import styles from "./index.module.css";
 
-function NewPostForm({ onAddPost, onClose }) {
+const NewPostForm = ({ onAddPost, onClose }) => {
   const [newPost, setNewPost] = useState({
     title: "",
     author: "",
@@ -37,39 +37,37 @@ function NewPostForm({ onAddPost, onClose }) {
 
   return (
     <form className={styles.formContainer} onSubmit={handleSubmit}>
-      <div className={styles.formGrp}>
-        <div className={styles.titleGrp}>
-          <h2>Add new Blog Post</h2>
-          <CloseButton type="button" onClick={onClose} />
-        </div>
-
-        <Input
-          type="text"
-          name="title"
-          placeholder="Post Title"
-          value={newPost.title}
-          onChange={handleChange}
-        />
-
-        <Input
-          type="text"
-          name="author"
-          placeholder="Author"
-          value={newPost.author}
-          onChange={handleChange}
-        />
-
-        <TextArea
-          name="content"
-          placeholder="Enter the content"
-          value={newPost.content}
-          onChange={handleChange}
-        />
-
-        <AddPostButton type="submit" title="Publish Post" />
+      <div className={styles.titleGrp}>
+        <h2>Add new Blog Post</h2>
+        <CloseButton type="button" onClick={onClose} />
       </div>
+
+      <Input
+        type="text"
+        name="title"
+        placeholder="Post Title"
+        value={newPost.title}
+        onChange={handleChange}
+      />
+
+      <Input
+        type="text"
+        name="author"
+        placeholder="Author"
+        value={newPost.author}
+        onChange={handleChange}
+      />
+
+      <TextArea
+        name="content"
+        placeholder="Enter the content"
+        value={newPost.content}
+        onChange={handleChange}
+      />
+
+      <AddPostButton type="submit" title="Publish Post" />
     </form>
   );
-}
+};
 
 export default NewPostForm;

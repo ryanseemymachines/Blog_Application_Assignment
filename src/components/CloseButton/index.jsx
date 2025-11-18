@@ -1,13 +1,11 @@
 import styles from "./index.module.css";
 
-function CloseButton({ type, onClick }) {
+const CloseButton = ({ type, onClick }) => {
   return (
-    <div>
-      <button className={styles.closeBtn} type={type} onClick={onClick}>
-        <i class="fa-solid fa-xmark"></i>
-      </button>
-    </div>
+    <button className={styles.closeBtn} type={type} onClick={onClick}>
+      <i class="fa-solid fa-xmark"></i>
+    </button>
   );
-}
+};
 
 export default CloseButton;

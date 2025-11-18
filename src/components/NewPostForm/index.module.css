@@ -1,15 +1,7 @@
 .formContainer {
   display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.formGrp {
-  display: flex;
   flex-direction: column;
-  gap: 20px;
-  width: 100%;
-  border-radius: 16px;
+  gap:25px;
 }
 
 .titleGrp {

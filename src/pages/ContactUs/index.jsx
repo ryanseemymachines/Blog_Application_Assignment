@@ -5,7 +5,7 @@ import Input from "../../components/Input";
 import TextArea from "../../components/TextArea";
 import styles from "./index.module.css";
 
-function ContactUs() {
+const ContactUs = () => {
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -46,7 +46,7 @@ function ContactUs() {
           <h1>Contact Us</h1>
           <p className={styles.subtitle}>
             <span>Mail : blogit@gmail.com</span>
-            <span>Phone :9876543210</span>
+            <span>Phone : 9876543210</span>
           </p>
           <div className={styles.formWrapper}>
             <Input

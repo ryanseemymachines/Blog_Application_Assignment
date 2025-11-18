@@ -3,7 +3,7 @@ import HomeFooter from '../../components/HomeFooter';
 import PostList from '../../components/PostList';
 import styles from'./index.module.css';
 
-function Home() {
+const Home = () => {
   return (
     <div className={styles.pageWrapper}>
       <HomeHeader/>

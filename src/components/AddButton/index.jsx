@@ -1,13 +1,11 @@
-import styles from './index.module.css';
+import styles from "./index.module.css";
 
-function AddPostButton({ type, title }) {
+const AddPostButton = ({ type, title }) => {
   return (
-    <div>
-      <button className={styles.addBtn} type={type}>
-        {title}
-      </button>
-    </div>
+    <button className={styles.addBtn} type={type}>
+      {title}
+    </button>
   );
-}
+};
 
 export default AddPostButton;

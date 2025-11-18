@@ -3,6 +3,8 @@
   background-color: rgb(255, 242, 221);
   overflow-x: auto;
   overflow-y: hidden;
+  display: flex;
+  gap: 15px;
 }
 
 .blogTitleHeader::-webkit-scrollbar {
@@ -20,12 +22,6 @@
 
 .blogTitleHeader::-webkit-scrollbar-thumb:hover {
   background: rgb(86, 86, 86);
-}
-
-.headerList {
-  display: flex;
-  gap: 15px;
-  width: max-content;
 }
 
 .postCard {

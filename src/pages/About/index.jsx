@@ -2,7 +2,7 @@ import HomeHeader from "../../components/HomeHeader";
 import HomeFooter from "../../components/HomeFooter";
 import styles from "./index.module.css";
 
-function About() {
+const About = () => {
   return (
     <div className={styles.pageWrapper}>
       <HomeHeader />

@@ -1,6 +1,6 @@
 import styles from "./index.module.css";
 
-function HomeFooter() {
+const HomeFooter = () => {
   return (
     <footer className={styles.footerGrp}>
       <section className={styles.copyrightGrp}>
@@ -8,32 +8,21 @@ function HomeFooter() {
         <p>All rights reserved.</p>
       </section>
       <section className={styles.socialsGrp}>
-        <ul>
-          <li>
-            <a href="https://www.facebook.com/" target="_blank">
-              <i class="fa-brands fa-facebook"></i>Facebook
-            </a>
-          </li>
-          <li>
-            <a href="https://x.com/" target="_blank">
-              <i class="fa-brands fa-twitter"></i>Twitter
-            </a>
-          </li>
-          <li>
-            <a href="https://www.instagram.com/" target="_blank">
-              <i class="fa-brands fa-instagram"></i>Instagram
-            </a>
-          </li>
-          <li>
-            <a href="https://in.linkedin.com/" target="_blank">
-              <i class="fa-brands fa-linkedin"></i>LinkedIn
-            </a>
-          </li>
-        </ul>
+        <a href="https://www.facebook.com/" target="_blank">
+          <i class="fa-brands fa-facebook"></i>Facebook
+        </a>
+        <a href="https://x.com/" target="_blank">
+          <i class="fa-brands fa-twitter"></i>Twitter
+        </a>
+        <a href="https://www.instagram.com/" target="_blank">
+          <i class="fa-brands fa-instagram"></i>Instagram
+        </a>
+        <a href="https://in.linkedin.com/" target="_blank">
+          <i class="fa-brands fa-linkedin"></i>LinkedIn
+        </a>
       </section>
     </footer>
   );
 }
 
 export default HomeFooter;
-
