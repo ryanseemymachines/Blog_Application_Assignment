@@ -1,0 +1,28 @@
+.footerGrp {
+  background-color: rgb(251, 234, 214);
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  padding: 20px;
+  width: 100%;
+}
+
+.footerGrp p {
+  margin: 10px 0 0;
+}
+
+.socialsGrp {
+  display: flex;
+  gap: 40px;
+}
+
+.socialsGrp a {
+  text-decoration: none;
+  color: black;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.socialsGrp a:hover {
+  text-decoration: underline;
+}

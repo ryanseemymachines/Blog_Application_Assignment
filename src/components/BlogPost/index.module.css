@@ -1,0 +1,16 @@
+.blogPostCard {
+  width: 50%;
+  border: 1px solid black;
+  border-radius: 15px;
+  padding: 20px;
+  margin: 20px auto;
+}
+
+.blogPostCard p {
+  font-size: 1.05em;
+  line-height: 1.4;
+}
+
+.para_content {
+  margin: 15px 0;
+}

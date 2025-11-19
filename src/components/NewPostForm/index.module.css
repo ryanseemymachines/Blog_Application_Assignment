@@ -1,0 +1,12 @@
+.formContainer {
+  display: flex;
+  flex-direction: column;
+  gap:25px;
+}
+
+.titleGrp {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
